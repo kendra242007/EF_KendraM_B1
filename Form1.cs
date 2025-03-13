@@ -18,19 +18,43 @@ namespace EF_KendraM_B1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((int.TryParse(textnumero1.Text, out int numero1))&&(int.TryParse(textnumero2.Text, out int numero2)))
+            if ((((int.TryParse(textnumero1.Text, out int numero1))) &&(int.TryParse(textnumero2.Text, out int numero2))) &&(int.TryParse(textnumero3.Text, out int numero3)))
             {
-                if (numero1 < numero2 )
+                if ((numero1 < numero2)  && (numero1 < numero3))
                 {
-                    MessageBox.Show("El primer numero es menor a  " + numero2);
+                    MessageBox.Show(numero1 + " es < que " + numero2 + " y es < que " + numero3);
                 }
-                else if (numero1 == numero2)
+                else if ((numero1 == numero2) && (numero2 == numero3))
                 {
-                    MessageBox.Show("El primer numero es igual a  " + numero2);
+                    MessageBox.Show(numero1 + " es = que " + numero2 + " es = que " + numero3 );
+                }
+                else if ((numero1 < numero2) && (numero2 > numero3))
+                {
+                    MessageBox.Show(numero1 +" es < que " + numero2 + " es > que " + numero3);
+                }
+                else if ((numero1 > numero2) && (numero2 < numero3))
+                {
+                    MessageBox.Show(numero1 + " es > que " + numero2 + " es < que " + numero3);
+                }
+                else if ((numero1 == numero2) && (numero2 > numero3))
+                {
+                    MessageBox.Show(numero1 + " es = que " + numero2 + " es > que " + numero3);
+                }
+                else if ((numero1 == numero2) && (numero2 < numero3))
+                {
+                    MessageBox.Show(numero1 + " es = que " + numero2 + " es < que " + numero3);
+                }
+                else if ((numero1 > numero2) && (numero2 == numero3))
+                {
+                    MessageBox.Show(numero1 + " es > que " + numero2 + " es = que " + numero3);
+                }
+                else if ((numero1 < numero2) && (numero2 == numero3))
+                {
+                    MessageBox.Show(numero1 + " es < que " + numero2 + " es = que " + numero3);
                 }
                 else
                 {
-                    MessageBox.Show("El primer es mayor a  " + numero2);
+                    MessageBox.Show(numero1 + " es > que " + numero2 + " es > que " + numero3);
                 }
                 
             }
@@ -40,6 +64,11 @@ namespace EF_KendraM_B1
             {
                 MessageBox.Show("Ingrese un valor valido");
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
